@@ -14,3 +14,14 @@
     // const headers = {
     //    'X-Finnhub-Token' : tokenfinhub
     // }
+
+          {/* <button onClick={getFDA}>get FDA</button> */}
+      {/* {FDA && (
+                <div>  
+                    <a href={FDA.url}>{FDA.url}</a>
+                    <p>{FDA.eventDescription}</p>
+                    <p>{FDA.fromDate}</p>
+                    <p>{FDA.toDate}</p>
+                </div>
+              
+            )} */}
