@@ -1,11 +1,11 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Share: React.FC = () => {
   const [data, setData] = useState<any>("");
   const [data1, setData1] = useState<any>("");
 
-  function get1() {
+  useEffect(() => {
     axios
       .get(
         "https://finnhub.io/api/v1/stock/profile2?symbol=AAPL&token=cjsv2mpr01qgcbapfhj0cjsv2mpr01qgcbapfhjg"
@@ -20,11 +20,10 @@ const Share: React.FC = () => {
       .then((resp) => {
         setData1(resp.data);
       });
-  }
+  }, [])
 
   return (
     <div className="share">
-      <button onClick={get1}>get info</button>
       <h1>Share info</h1>
 
       {data && (

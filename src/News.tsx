@@ -13,7 +13,7 @@ interface INews {
 }
 
 const News: React.FC = () => {
-  const [data, setdata] = useState<INews[] | null>(null);
+  const [news, setNews] = useState<INews[] | null>(null);
 
   useEffect(() => {
     axios
@@ -22,20 +22,20 @@ const News: React.FC = () => {
     )
     .then((resp) => {
       console.log(resp.data);
-      setdata(resp.data);
+      setNews(resp.data);
     });
   }, [])
     
   return (
     <div className="news">
-      {data && (
+      {news && (
         <div className="news_area">
-          {data.map((el: INews) => (
+          {news.map((el: INews) => (
             <div id={el.id.toString()} className="news_area-new">
               <p>{el.category}</p>
               <p>{new Date(el.datetime * 1000).toLocaleString()}</p>
               <p>{el.headline}</p>
-              <img src={el.image} alt="" />
+              <img src={el.image} alt="Хер а не фото" />
               <p>{el.related}</p>
               <p>{el.source}</p>
               <p>{el.summary}</p>
